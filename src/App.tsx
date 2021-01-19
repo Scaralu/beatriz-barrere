@@ -9,13 +9,13 @@ import Routes from './routes'
 
 const App: React.FC = () => (
 	<Router>
+
 		<AppProvider>
 			<Routes	 />
 		</AppProvider>
 
 		<GlobalStyle />
 	</ Router>
-); 
+);
 
 export default App;
-/* ${(props) => toastTypeVariations[prop.type || 'info']} */

@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom';
 export const Nav = styled.div`
     display: flex;
     flex-wrap: wrap;
-
     width: 100%;
     height: 70;
     align-items: center;
     justify-content: space-around;
+
+    background: #FFF;
 `;
 
 export const LinkContainer = styled.div`
@@ -25,14 +26,14 @@ export const StyledLink = styled(Link)`
 
     padding: 0.5em;
     text-decoration: none;
-    
+
     transition: opacity 0.2s;
 
     &:Link {
         margin-right: 1.25rem;
         margin-left: 1.25rem;
     }
-    
+
     &:hover {
         opacity: 0.6;
         border-bottom: 2px solid #0490ad;
