@@ -18,8 +18,6 @@ import Textarea from '../../components/Textarea';
 import { FiUser, FiMail, FiSend } from 'react-icons/fi';
 import Email from '../../assets/undraw/send_email2.svg';
 
-
-
 const Contact: React.FC = () => {
 
     const formRef = useRef<FormHandles>(null);
@@ -75,7 +73,6 @@ const Contact: React.FC = () => {
             <Container>
                 <IntroductionWrapper>
                     <h1>Converse comigo!</h1>
-
                     <p>Tem alguma dúvida ou quer saber mais? <br />
                     Me mande uma mensagem e eu responderei assim que possível.</p>
                     <div>

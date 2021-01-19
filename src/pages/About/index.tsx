@@ -1,16 +1,14 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import Header from '../../components/Header';
 
 const About: React.FC = () => {
 	return (
-        <>
-            <h1>About</h1>
-            <br/>
-            <Link to="/contact">
-                Contact
-            </Link>
-        </>
+		<>
+			<Header />
+
+			<h1>ABOUT</h1>
+		</>
 	)
 }
 
