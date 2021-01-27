@@ -1,5 +1,7 @@
+import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
+import ReviewCard from '../../components/ReviewCard';
 import {
 	IntroductionContainer,
 	HeaderSection,
@@ -14,7 +16,9 @@ import {
 	QuestionItemContainer,
 	QuestionImage,
 	SubTitle,
-	QuestionText
+	QuestionText,
+	RecomendationSection,
+	RecomendedContainer
 } from './styles';
 
 import test from '../../assets/bea.jpeg';
@@ -24,9 +28,39 @@ import { FiMapPin } from "react-icons/fi"
 
 import HOW from '../../assets/undraw/psico-cyan.svg';
 import PEOPLE from '../../assets/undraw/people-cyan.svg';
+import api from '../../services/api';
 
+interface IResultObject {
+		"author_name" : string;
+		"author_url" : string;
+		"language" : string;
+		"profile_photo_url" : string;
+		"rating" : number;
+		"relative_time_description" : string;
+		"text" : string;
+		"time" : number;
+}
+
+interface IMapsInterface {
+	html_attributions: [];
+	result: {
+		reviews: IResultObject[];
+	}
+}
 
 const Home: React.FC = () => {
+
+	const [apiData, setApiData] = useState<IMapsInterface | undefined>(undefined);
+
+	useEffect(() => {
+		async function loadApiData(){
+			const data: IMapsInterface = await api.get('/maps');
+			setApiData(data);
+		}
+
+		loadApiData();
+	}, [])
+
 	return (
 		<>
 			<Header />
@@ -103,16 +137,19 @@ const Home: React.FC = () => {
 					</QuestionItemContainer>
 				</QuestionWrapper>
 			</QuestionSection>
+			<RecomendationSection>
+				<RecomendedContainer>
+					{apiData?.result.reviews.map((result, i) => {
+						console.log(result);
+						return(
+							<ReviewCard name={result.author_name} rating={result.rating} text={result.text} key={result.time} />
+						)
+					})
+					}
+				</RecomendedContainer>
+			</RecomendationSection>
 		</>
 	)
 }
 
 export default Home;
-
-
-// Para quem?
-//
-
-
-// 					Como?
-//

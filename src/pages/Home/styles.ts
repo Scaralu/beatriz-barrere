@@ -71,8 +71,8 @@ export const SocialLinks = styled.a`
 	}
 `;
 
-export const QuestionSection = styled.div`
-	display:flex;
+export const QuestionSection = styled.section`
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 40px;
@@ -111,3 +111,28 @@ export const QuestionText = styled.div`
 	padding: 15px 0 15px 0;
 	font-size: 15px;
 `
+
+export const RecomendationSection = styled.section`
+	display: flex;
+	width: 100%;
+	background-image: linear-gradient(135deg,#0490ad,#acdbc5);
+	overflow: hidden;
+	position: relative;
+	padding-top: 30px;
+	justify-content: center;
+	align-items: center;
+`;
+
+export const RecomendedContainer = styled.div`
+	width: 90%;
+	padding: 20px;
+	display: flex;
+	flex-wrap: wrap-reverse;
+	border-radius: 5px;
+	background: #FFF;
+`;
+
+export const RecomendedItem = styled.div`
+	flex: 1;
+	margin 18px;
+`;
