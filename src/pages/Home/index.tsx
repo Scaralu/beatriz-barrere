@@ -86,7 +86,7 @@ const Home: React.FC = () => {
 						</Button>
 						<ContactWrapper>
 							<SocialLinks
-									href="https://api.whatsapp.com/send?phone=15551234567"
+									href="https://api.whatsapp.com/send?phone=+5511999284848"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
@@ -100,7 +100,7 @@ const Home: React.FC = () => {
 									<FaInstagram size={40} />
 								</SocialLinks>
 								<SocialLinks
-									href="https://www.instagram.com/psi.beatrizbarrere"
+									href="https://goo.gl/maps/asMxoykXXXztTPiy9"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
