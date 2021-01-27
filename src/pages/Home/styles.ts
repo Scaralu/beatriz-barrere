@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import Button from '../../components/Button';
-
 export const HeaderSection = styled.section`
 	padding-top: 30px;
 	color: #fff;
@@ -12,11 +10,11 @@ export const HeaderSection = styled.section`
 
 export const IntroductionContainer = styled.div`
 	width: 100%;
-	padding: 30px;
+	padding: 20px;
 	margin-right: auto;
 	margin-left: auto;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	flex-wrap: wrap-reverse;
 	margin-top: 10px;
 
@@ -27,7 +25,6 @@ export const LeftWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	max-width: 500px;
-	width: 100%;
 	margin-bottom: 30px;
 
 	justify-content: center;
@@ -41,10 +38,9 @@ export const Text = styled.div`
 
 export const RightWrapper = styled.div`
 	display: flex;
-	max-width: 400px;
 	min-width: 300px;
-	width: 100%;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: flex-start;
 	align-items: center;
 	margin-bottom: 30px;
 `;
@@ -75,13 +71,43 @@ export const SocialLinks = styled.a`
 	}
 `;
 
-export const FaqSection = styled.div`
+export const QuestionSection = styled.div`
 	display:flex;
 	justify-content: center;
 	align-items: center;
+	padding: 40px;
 `;
 
-export const FaqWrapper = styled.div`
+export const QuestionWrapper = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
 	max-width: 960px;
 	width: 100%;
+`;
+
+export const QuestionItemContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 300px;
+	padding-bottom: 8px;
+`;
+
+export const QuestionImage = styled.img`
+	padding-bottom: 15px;
+`;
+
+export const SubTitle = styled.h2`
+	color: #0490ad;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #0490ad;
+`;
+
+export const QuestionText = styled.div`
+	text-align: center;
+	padding: 15px 0 15px 0;
+	font-size: 15px;
 `

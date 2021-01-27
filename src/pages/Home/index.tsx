@@ -1,14 +1,30 @@
-
 import Header from '../../components/Header';
 import Button from '../../components/Button';
-import { IntroductionContainer, HeaderSection, LeftWrapper, RightWrapper, Image, Text, ContactWrapper, SocialLinks, FaqSection } from './styles';
+import {
+	IntroductionContainer,
+	HeaderSection,
+	LeftWrapper,
+	RightWrapper,
+	Image,
+	Text,
+	ContactWrapper,
+	SocialLinks,
+	QuestionSection,
+	QuestionWrapper,
+	QuestionItemContainer,
+	QuestionImage,
+	SubTitle,
+	QuestionText
+} from './styles';
 
 import test from '../../assets/bea.jpeg';
 
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi"
 
-import FAQ from '../../assets/undraw/faq.svg';
+import HOW from '../../assets/undraw/psico-cyan.svg';
+import PEOPLE from '../../assets/undraw/people-cyan.svg';
+
 
 const Home: React.FC = () => {
 	return (
@@ -63,18 +79,40 @@ const Home: React.FC = () => {
 					</RightWrapper>
 				</IntroductionContainer>
 			</HeaderSection>
-			<FaqSection>
-				<img src={FAQ} alt="faq" width="250"/>
-				Para quem?
-				TODOS podem fazer psicoterapia!  “Psicólogo é coisa de louco” era dito por muitos, hoje em dia esse conceito mudou. A psicoterapia é procurada em diversas situações, seja por encaminhamento médico ou procura direta, caso a pessoa esteja enfrentando um momento em que não consiga caminhar sozinha(o).
-
-
-				Como?
-				As sessões têm frequência semanal, quinzenal ou até mensal (a combinar no primeiro atendimento, dependendo do caso), com duração de 50 minutos. 
-				A modalidade de atendimento pode ser presencial no consultório localizado em São Caetano do Sul ou online (dependendo da localização geográfica do paciente). O valor das sessões será combinado no primeiro encontro.
-			</FaqSection>
+			<QuestionSection>
+				<QuestionWrapper>
+					<QuestionItemContainer>
+						<QuestionImage src={PEOPLE} alt="people" height="168"/>
+						<SubTitle>Quem pode?</SubTitle>
+						<QuestionText>
+							<strong>TODOS</strong> podem fazer psicoterapia!
+							<br/>
+							<br/>
+							A psicoterapia é procurada em diversas situações, seja por encaminhamento médico ou procura direta, caso a pessoa esteja enfrentando um momento em que não consiga caminhar sozinha(o).
+						</QuestionText>
+					</QuestionItemContainer>
+					<QuestionItemContainer>
+						<QuestionImage src={HOW} alt="como" height="168"/>
+						<SubTitle>Como Acontece?</SubTitle>
+						<QuestionText>
+							<strong>Online ou Presencial!</strong>
+							<br/>
+							<br/>
+							As sessões têm frequência semanal, quinzenal ou até mensal, com duração de 50 minutos cada.
+						</QuestionText>
+					</QuestionItemContainer>
+				</QuestionWrapper>
+			</QuestionSection>
 		</>
 	)
 }
 
 export default Home;
+
+
+// Para quem?
+//
+
+
+// 					Como?
+//

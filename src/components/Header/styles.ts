@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 
 export const Nav = styled.div`
     display: flex;
-    flex-wrap: wrap;
     width: 100%;
-    height: 70;
-    align-items: center;
-    justify-content: space-around;
-
-    background: #FFF;
+		height: 70;
+		background: #FFF;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-around;
 `;
 
 export const LinkContainer = styled.div`
@@ -36,6 +35,6 @@ export const StyledLink = styled(Link)`
 
     &:hover {
         opacity: 0.6;
-        border-bottom: 2px solid #0490ad;
+        border-bottom: 2px solid #f09830;
     }
 `;
