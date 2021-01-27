@@ -1,16 +1,66 @@
-
+import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
-import { IntroductionContainer, HeaderSection, LeftWrapper, RightWrapper, Image, Text, ContactWrapper, SocialLinks, FaqSection } from './styles';
+import ReviewCard from '../../components/ReviewCard';
+import {
+	IntroductionContainer,
+	HeaderSection,
+	LeftWrapper,
+	RightWrapper,
+	Image,
+	Text,
+	ContactWrapper,
+	SocialLinks,
+	QuestionSection,
+	QuestionWrapper,
+	QuestionItemContainer,
+	QuestionImage,
+	SubTitle,
+	QuestionText,
+	RecomendationSection,
+	RecomendedContainer
+} from './styles';
 
 import test from '../../assets/bea.jpeg';
 
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi"
 
-import FAQ from '../../assets/undraw/faq.svg';
+import HOW from '../../assets/undraw/psico-cyan.svg';
+import PEOPLE from '../../assets/undraw/people-cyan.svg';
+import api from '../../services/api';
+
+interface IResultObject {
+		"author_name" : string;
+		"author_url" : string;
+		"language" : string;
+		"profile_photo_url" : string;
+		"rating" : number;
+		"relative_time_description" : string;
+		"text" : string;
+		"time" : number;
+}
+
+interface IMapsInterface {
+	html_attributions: [];
+	result: {
+		reviews: IResultObject[];
+	}
+}
 
 const Home: React.FC = () => {
+
+	const [apiData, setApiData] = useState<IMapsInterface | undefined>(undefined);
+
+	useEffect(() => {
+		async function loadApiData(){
+			const data: IMapsInterface = await api.get('/maps');
+			setApiData(data);
+		}
+
+		loadApiData();
+	}, [])
+
 	return (
 		<>
 			<Header />
@@ -36,7 +86,7 @@ const Home: React.FC = () => {
 						</Button>
 						<ContactWrapper>
 							<SocialLinks
-									href="https://api.whatsapp.com/send?phone=15551234567"
+									href="https://api.whatsapp.com/send?phone=+5511999284848"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
@@ -50,7 +100,7 @@ const Home: React.FC = () => {
 									<FaInstagram size={40} />
 								</SocialLinks>
 								<SocialLinks
-									href="https://www.instagram.com/psi.beatrizbarrere"
+									href="https://goo.gl/maps/asMxoykXXXztTPiy9"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
@@ -63,16 +113,41 @@ const Home: React.FC = () => {
 					</RightWrapper>
 				</IntroductionContainer>
 			</HeaderSection>
-			<FaqSection>
-				<img src={FAQ} alt="faq" width="250"/>
-				Para quem?
-				TODOS podem fazer psicoterapia!  “Psicólogo é coisa de louco” era dito por muitos, hoje em dia esse conceito mudou. A psicoterapia é procurada em diversas situações, seja por encaminhamento médico ou procura direta, caso a pessoa esteja enfrentando um momento em que não consiga caminhar sozinha(o).
-
-
-				Como?
-				As sessões têm frequência semanal, quinzenal ou até mensal (a combinar no primeiro atendimento, dependendo do caso), com duração de 50 minutos. 
-				A modalidade de atendimento pode ser presencial no consultório localizado em São Caetano do Sul ou online (dependendo da localização geográfica do paciente). O valor das sessões será combinado no primeiro encontro.
-			</FaqSection>
+			<QuestionSection>
+				<QuestionWrapper>
+					<QuestionItemContainer>
+						<QuestionImage src={PEOPLE} alt="people" height="168"/>
+						<SubTitle>Quem pode?</SubTitle>
+						<QuestionText>
+							<strong>TODOS</strong> podem fazer psicoterapia!
+							<br/>
+							<br/>
+							A psicoterapia é procurada em diversas situações, seja por encaminhamento médico ou procura direta, caso a pessoa esteja enfrentando um momento em que não consiga caminhar sozinha(o).
+						</QuestionText>
+					</QuestionItemContainer>
+					<QuestionItemContainer>
+						<QuestionImage src={HOW} alt="como" height="168"/>
+						<SubTitle>Como Acontece?</SubTitle>
+						<QuestionText>
+							<strong>Online ou Presencial!</strong>
+							<br/>
+							<br/>
+							As sessões têm frequência semanal, quinzenal ou até mensal, com duração de 50 minutos cada.
+						</QuestionText>
+					</QuestionItemContainer>
+				</QuestionWrapper>
+			</QuestionSection>
+			<RecomendationSection>
+				<RecomendedContainer>
+					{apiData?.result.reviews.map((result, i) => {
+						console.log(result);
+						return(
+							<ReviewCard name={result.author_name} rating={result.rating} text={result.text} key={result.time} />
+						)
+					})
+					}
+				</RecomendedContainer>
+			</RecomendationSection>
 		</>
 	)
 }
