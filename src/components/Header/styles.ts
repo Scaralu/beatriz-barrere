@@ -23,14 +23,15 @@ export const StyledLink = styled(Link)`
     color: #0490ad;
     font-weight: 600;
 
-    padding: 0.5em;
+		padding: 1.0em;
+		padding-bottom: 1.0em;
     text-decoration: none;
 
     transition: opacity 0.2s;
 
     &:Link {
-        margin-right: 1.25rem;
-        margin-left: 1.25rem;
+        margin-right: 0rem;
+        margin-left: 0rem;
     }
 
     &:hover {

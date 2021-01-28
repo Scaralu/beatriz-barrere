@@ -119,6 +119,7 @@ export const RecomendationSection = styled.section`
 	overflow: hidden;
 	position: relative;
 	padding-top: 30px;
+	padding-bottom: 30px;
 	justify-content: center;
 	align-items: center;
 `;

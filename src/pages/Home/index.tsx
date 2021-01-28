@@ -20,6 +20,7 @@ import {
 	RecomendationSection,
 	RecomendedContainer
 } from './styles';
+import Footer from '../../components/Footer';
 
 import test from '../../assets/bea.jpeg';
 
@@ -148,6 +149,7 @@ const Home: React.FC = () => {
 					}
 				</RecomendedContainer>
 			</RecomendationSection>
+			<Footer />
 		</>
 	)
 }
