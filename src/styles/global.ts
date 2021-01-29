@@ -1,13 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
 
+import './font.css';
+
 export default createGlobalStyle`
+
 	* {
 			margin: 0;
 			padding: 0;
 			box-sizing: border-box;
 			outline: 0;
 			-webkit-font-smoothing: antialiased;
-			font-family: 'Roboto slab', sans-serif;
 	}
 
 	body {
