@@ -1,34 +1,16 @@
 import React, { useState, useEffect } from 'react';
+
+import Nav from '../../components/Nav';
 import Header from '../../components/Header';
-import Button from '../../components/Button';
-import ReviewCard from '../../components/ReviewCard';
-import {
-	IntroductionContainer,
-	HeaderSection,
-	LeftWrapper,
-	RightWrapper,
-	Image,
-	Text,
-	ContactWrapper,
-	SocialLinks,
-	QuestionSection,
-	QuestionWrapper,
-	QuestionItemContainer,
-	QuestionImage,
-	SubTitle,
-	QuestionText,
-	RecomendationSection,
-	RecomendedContainer
-} from './styles';
+import Faq from '../../components/Faq';
+import Testimonial from '../../components/Testimonial';
 import Footer from '../../components/Footer';
 
-import test from '../../assets/bea.jpeg';
+import {
+	CarouselSection,
+	TestimonialTitle
+} from './styles';
 
-import { FaWhatsapp, FaInstagram } from "react-icons/fa";
-import { FiMapPin } from "react-icons/fi"
-
-import HOW from '../../assets/undraw/psico-cyan.svg';
-import PEOPLE from '../../assets/undraw/people-cyan.svg';
 import api from '../../services/api';
 
 interface IResultObject {
@@ -54,9 +36,34 @@ const Home: React.FC = () => {
 	const [apiData, setApiData] = useState<IMapsInterface | undefined>(undefined);
 
 	useEffect(() => {
+
+		const fakeApiData: IMapsInterface = {
+			html_attributions: [],
+			result: {
+				reviews: [
+					{
+						author_name: "Lucca Scarano",
+						author_url: "",
+						language: "pt-br",
+						profile_photo_url: "https://avatars3.githubusercontent.com/u/48810662?s=400&u=c23598a03d13729c00dad2625da278516495241e&v=4",
+						rating: 5,
+						relative_time_description: "",
+						text: "A bea é muito boa tralalala",
+						time: 123451,
+					}
+				]
+			}
+		}
+
 		async function loadApiData(){
-			const data: IMapsInterface = await api.get('/maps');
-			setApiData(data);
+			try {
+				const data: IMapsInterface = await api.get('/maps');
+				setApiData(data);
+			} catch(e) {
+				console.warn(e);
+
+				setApiData(fakeApiData);
+			}
 		}
 
 		loadApiData();
@@ -64,91 +71,22 @@ const Home: React.FC = () => {
 
 	return (
 		<>
+			<Nav />
 			<Header />
-			<HeaderSection>
-				<IntroductionContainer>
-					<LeftWrapper>
-						<Text>
-							<h1><i>Frase louca e filosófica que remete ao teu trampo</i></h1>
-							<br/><hr/><br/>
-							<strong>
-								CRP: 06/150187
-							</strong>
-							<br/><br/>
-							<p>
-								<strong>Sou Beatriz Barrere, uma psicóloga comportamental</strong> com diversos pacientes satisfeitos.
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere, leo in eleifend vestibulum, justo l
-								igula placerat lacus, quis sollicitudin mi nunc id orci. Nullam eu lacinia nunc, in venenatis elit. Aenea
-								n at leo velit.
-							</p>
-						</Text>
-						<Button>
-							<strong>Entre em contato!</strong>
-						</Button>
-						<ContactWrapper>
-							<SocialLinks
-									href="https://api.whatsapp.com/send?phone=+5511999284848"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<FaWhatsapp size={40} />
-								</SocialLinks>
-								<SocialLinks
-									href="https://www.instagram.com/psi.beatrizbarrere"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<FaInstagram size={40} />
-								</SocialLinks>
-								<SocialLinks
-									href="https://goo.gl/maps/asMxoykXXXztTPiy9"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<FiMapPin size={40} />
-								</SocialLinks>
-							</ContactWrapper>
-					</LeftWrapper>
-					<RightWrapper>
-						<Image src={test} alt="undraw" width={300} height={300}/>
-					</RightWrapper>
-				</IntroductionContainer>
-			</HeaderSection>
-			<QuestionSection>
-				<QuestionWrapper>
-					<QuestionItemContainer>
-						<QuestionImage src={PEOPLE} alt="people" height="168"/>
-						<SubTitle>Quem pode?</SubTitle>
-						<QuestionText>
-							<strong>TODOS</strong> podem fazer psicoterapia!
-							<br/>
-							<br/>
-							A psicoterapia é procurada em diversas situações, seja por encaminhamento médico ou procura direta, caso a pessoa esteja enfrentando um momento em que não consiga caminhar sozinha(o).
-						</QuestionText>
-					</QuestionItemContainer>
-					<QuestionItemContainer>
-						<QuestionImage src={HOW} alt="como" height="168"/>
-						<SubTitle>Como Acontece?</SubTitle>
-						<QuestionText>
-							<strong>Online ou Presencial!</strong>
-							<br/>
-							<br/>
-							As sessões têm frequência semanal, quinzenal ou até mensal, com duração de 50 minutos cada.
-						</QuestionText>
-					</QuestionItemContainer>
-				</QuestionWrapper>
-			</QuestionSection>
-			<RecomendationSection>
-				<RecomendedContainer>
-					{apiData?.result.reviews.map((result, i) => {
+			<Faq />
+			{apiData &&
+				<CarouselSection>
+					<TestimonialTitle>
+						<h2>Testemunhos</h2>
+					</TestimonialTitle>
+					{apiData?.result.reviews.map(result => {
 						console.log(result);
 						return(
-							<ReviewCard name={result.author_name} rating={result.rating} text={result.text} key={result.time} />
+							<Testimonial name={result.author_name} rating={result.rating} text={result.text} profile_photo={result.profile_photo_url} key={result.time} />
 						)
-					})
-					}
-				</RecomendedContainer>
-			</RecomendationSection>
+					})}
+				</CarouselSection>
+			}
 			<Footer />
 		</>
 	)

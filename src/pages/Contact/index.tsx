@@ -9,7 +9,7 @@ import { useToast } from '../../hooks/toast';
 import api from '../../services/api';
 import getValidationErrors from '../../utils/getValidationErrors';
 
-import Header from '../../components/Header';
+import Header from '../../components/Nav';
 import { Container, FormWrapper, IntroductionWrapper } from './styles';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
