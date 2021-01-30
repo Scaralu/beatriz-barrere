@@ -3,7 +3,9 @@ import styled from 'styled-components';
 export const Card = styled.div`
 	display: flex;
 	width: 70%;
-	min-height: 400px;
+	height: 550px;
+	max-width: 400px;
+	min-width: 350px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border-radius: 15px;
@@ -11,13 +13,8 @@ export const Card = styled.div`
 	align-items: center;
 	flex-direction: column;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	max-width: 500px;
-	min-width: 300px;
 	background-color: #FAFAFA;
 	color: #1C1E21;
-	& + & {
-		margin-left: 10px;
-	}
 `;
 
 export const Profile = styled.div`
@@ -25,6 +22,8 @@ export const Profile = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	min-width: 350px;
+	height: 550px;
 `;
 
 export const PhotoContainer = styled.div`
@@ -32,6 +31,7 @@ export const PhotoContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	padding-bottom: 10px;
+	padding-top: 30px;
 `;
 
 export const Photo = styled.img`
@@ -60,5 +60,15 @@ export const RatingContainer = styled.div`
 
 export const TextContainer = styled.div`
 	text-align: center;
-	padding: 50px;
+	font-size: 14px;
+	height: 150px;
+	padding: 30px;
+`;
+
+export const Container = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	justify-self: flex-start;
 `;

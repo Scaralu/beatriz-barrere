@@ -9,7 +9,8 @@ import {
 	NameTitle,
 	PhotoContainer,
 	TextContainer,
-	RatingContainer
+	RatingContainer,
+	Container
 } from './styles';
 
 interface IReviewProps {
@@ -25,17 +26,19 @@ const Testimonial: React.FC<IReviewProps> = ({name, rating, text, profile_photo}
 	return (
 		<Card>
 			<Profile>
-				<PhotoContainer>
-					<Photo src={profile_photo} alt={name} />
-				</PhotoContainer>
-				<NameTitle>{name}</NameTitle>
-				<RatingContainer>
-					<FaStar color="#f09830" size={16}/>
-					<FaStar color="#f09830" size={16}/>
-					<FaStar color="#f09830" size={16}/>
-					<FaStar color="#f09830" size={16}/>
-					<FaStar color="#f09830" size={16}/>
-				</RatingContainer>
+				<Container>
+					<PhotoContainer>
+						<Photo src={profile_photo} alt={name} />
+					</PhotoContainer>
+					<NameTitle>{name}</NameTitle>
+					<RatingContainer>
+						<FaStar color="#f09830" size={16}/>
+						<FaStar color="#f09830" size={16}/>
+						<FaStar color="#f09830" size={16}/>
+						<FaStar color="#f09830" size={16}/>
+						<FaStar color="#f09830" size={16}/>
+					</RatingContainer>
+				</Container>
 				<TextContainer>
 					<h3>
 						"{text}"
