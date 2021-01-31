@@ -8,28 +8,47 @@ export const Container = styled.div`
     background: #0490ad;
     width: 100%;
 
-    border: 2px solid black;
 `;
 
 export const FormWrapper = styled.div`
-    padding: 10px;
-    height: 450px;    
-    width: 500px;
+		padding: 50px;
+		border-radius: 20px 20px 20px 20px;
+    margin: 70px;
+    height: 450px;
+		width: 500px;
+		align-items: space-around;
+		background: #FFF;
 
-    border: 2px solid green;
 `;
 
 export const IntroductionWrapper = styled.div`
-    height: 400px;
-    width: 750px;
+    height: 800px;
+    width: 500px;
 
-    color: #FFF;
-    
     display: flex;
-    flex-direction: column;
+		flex-direction: column;
+		padding: 100px;
     align-items: center;
-    justify-content: flex-start;
-    padding: 10px;
+		justify-content: center;
 
-    border: 2px solid red;
+`;
+
+export const SocialWrapper = styled.div`
+
+		display: flex;
+		flex-direction: row-start;
+		align-items: center;
+		justify-content: space-around;
+		padding: 3px;
+		margin: 10px;
+`;
+export const TextBox = styled.div`
+		color: #FFF;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		text-align: center;
+		padding: px;
+
 `;

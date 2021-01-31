@@ -11,10 +11,10 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
 	background: #FCFCFC;
 	border-radius: 10px;
-	border: 2px solid #FCFCFC;
+	border: 2px solid #000000;
 	padding: 16px;
     width: 100%;
-	
+
 	display: flex;
 	align-items: center;
     color: #3c3c3c;
@@ -44,7 +44,7 @@ export const Container = styled.div<ContainerProps>`
 			color: #666360;
 		}
 	}
-    
+
     svg {
         margin-right: 16px;
 	}
