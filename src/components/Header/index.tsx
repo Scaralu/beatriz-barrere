@@ -16,9 +16,17 @@ import {
 	SocialLinks,
 	AvatarImage,
 } from './styles';
+import { useHistory } from 'react-router-dom';
 
 
 const Header: React.FC = () => {
+
+	const history = useHistory();
+
+	function goToContact() {
+		history.push('/contact');
+	}
+
 	return(
 		<Section>
 			<Container>
@@ -48,7 +56,7 @@ const Header: React.FC = () => {
 							Sou proprietária da empresa Beatriz Barrére Psicologia
 						</p>
 					</Text>
-					<Button>
+					<Button onClick={goToContact}>
 						<strong>Entre em contato!</strong>
 					</Button>
 					<ContactWrapper>

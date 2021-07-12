@@ -39,3 +39,12 @@ export const StyledLink = styled(Link)`
         border-bottom: 2px solid #f09830;
     }
 `;
+
+export const FakeStyledLink = styled(StyledLink)`
+	color: #6a6a6a;
+
+	&:hover {
+		opacity: 0.6;
+		border-bottom: 2px solid #3c3c3c;
+	}
+`;

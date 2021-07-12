@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import { Section, StyledLink, LinkContainer } from './styles';
+import { Section, StyledLink, LinkContainer, FakeStyledLink } from './styles';
 
 import Logo from '../../assets/logo/outline-green.png'
 
@@ -19,9 +19,9 @@ const Nav: React.FC = () => {
 						<StyledLink to="/contact">
 							Contato
 						</StyledLink>
-						<StyledLink to="/contact">
+						<FakeStyledLink to="#">
 							Blog
-						</StyledLink>
+						</FakeStyledLink>
 					</LinkContainer>
 			</Section>
 		</>
