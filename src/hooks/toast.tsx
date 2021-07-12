@@ -10,12 +10,12 @@ interface ToastContextDTO {
 
 export interface ToastMessage {
 	id: string;
-	type?: 'success' | 'error' | 'info'
+	type?: 'success' | 'error' | 'info';
 	title: string;
 	description?: string;
 }
 
-const ToastContext = createContext<ToastContextDTO>( {} as ToastContextDTO);
+const ToastContext = createContext<ToastContextDTO>({} as ToastContextDTO);
 
 const ToastProvider: React.FC = ({ children }) => {
 	const [messages, setMessages] = useState<ToastMessage[]>([]); 

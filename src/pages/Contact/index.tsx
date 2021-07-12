@@ -35,7 +35,6 @@ import { FiUser, FiMail, FiSend } from 'react-icons/fi';
 import FAQ from '../../assets/undraw/mobile.svg';
 import BeatrizBarrere from '../../assets/bea.jpeg'
 
-
 const Contact: React.FC = () => {
 
 	const formRef = useRef<FormHandles>(null);
