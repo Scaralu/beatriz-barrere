@@ -1,6 +1,15 @@
 
 # Project patterns
 
+## Google maps api
+
+place_id ChIJoyWi4g9dzpQRzftSuezo1W0
+api-key AIzaSyDS-0rf5oifF-x8vMjV9C0eUT-JduBRLEo
+
+https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJoyWi4g9dzpQRzftSuezo1W0&key=AIzaSyDS-0rf5oifF-x8vMjV9C0eUT-JduBRLEo
+
+url to request comments
+
 ## Color pallet
 
 #843280 - purple
