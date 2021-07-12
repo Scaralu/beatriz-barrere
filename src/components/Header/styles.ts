@@ -7,7 +7,6 @@ export const Section = styled.section`
 	position: relative;
 	background-image: linear-gradient(135deg,#0490ad,#acdbc5);
 	overflow: hidden;
-
 `;
 
 export const Container = styled.div`
@@ -56,7 +55,6 @@ export const AvatarImage = styled.img`
 export const ContactWrapper = styled.div`
 	display: flex;
 	justify-content: center;
-	align-itens: center;
 	max-width: 500px;
 	flex-wrap: wrap;
 	width: 100%;

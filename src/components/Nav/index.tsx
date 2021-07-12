@@ -13,8 +13,8 @@ const Nav: React.FC = () => {
 							<img src={Logo} alt="PsicólogoBeatrizBarrere" width="100" height="100"/>
 					</Link>
 					<LinkContainer>
-						<StyledLink to="/about">
-							Sobre
+						<StyledLink to="/">
+							Home
 						</StyledLink>
 						<StyledLink to="/contact">
 							Contato

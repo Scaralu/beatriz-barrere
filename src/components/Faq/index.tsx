@@ -24,7 +24,7 @@ const Faq: React.FC = () => {
 						<strong>TODOS</strong> podem fazer psicoterapia!
 						<br/>
 						<br/>
-						A psicoterapia é procurada em diversas situações, seja por encaminhamento médico ou procura direta, caso a pessoa esteja enfrentando um momento em que não consiga caminhar sozinha(o).
+						A psicoterapia é para todo aquele que deseja conhecer a si mesmo e alcançar a sua melhor versão!
 					</StyledText>
 				</ItemContainer>
 				<ItemContainer>
@@ -34,7 +34,7 @@ const Faq: React.FC = () => {
 						<strong>Online ou Presencial!</strong>
 						<br/>
 						<br/>
-						As sessões têm frequência semanal, quinzenal ou até mensal, com duração de 50 minutos cada.
+						Entre em contato e agendaremos uma conversa inicial. Nesta conversa abordaremos sobre o porquê você procura um psicólogo e tira as suas dúvidas sobre o processo terapêutico.
 					</StyledText>
 				</ItemContainer>
 			</Wrapper>

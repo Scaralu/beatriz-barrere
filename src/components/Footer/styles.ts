@@ -5,7 +5,7 @@ export const StrongTitle = styled.strong`
 `;
 
 export const SubText = styled.p`
-	font-color: #6a6a6a;
+	color: #6a6a6a;
 `;
 
 export const FooterSection = styled.footer`

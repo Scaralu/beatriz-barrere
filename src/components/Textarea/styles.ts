@@ -11,13 +11,13 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
 	background: #FCFCFC;
 	border-radius: 10px;
-	border: 2px solid #000000;
+	border: 1px solid #3c3c3c;
 	padding: 16px;
-    width: 100%;
+	width: 100%;
 
 	display: flex;
 	align-items: center;
-    color: #3c3c3c;
+	color: #3c3c3c;
 
 	& + div {
 			margin-top: 16px;

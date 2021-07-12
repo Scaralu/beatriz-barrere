@@ -3,24 +3,23 @@ import styled from 'styled-components';
 export const Card = styled.div`
 	display: flex;
 	width: 70%;
-	height: 550px;
+	height: 580px;
 	max-width: 400px;
 	min-width: 350px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border-radius: 15px;
-	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	background-color: #FAFAFA;
-	color: #1C1E21;
+	color: #6a6a6a;
 `;
 
 export const Profile = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	min-width: 350px;
 	height: 550px;

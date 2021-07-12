@@ -24,17 +24,28 @@ const Header: React.FC = () => {
 			<Container>
 				<LeftWrapper>
 					<Text>
-						<h1><i>Frase louca e filosófica que remete ao teu trampo</i></h1>
-						<br/><hr/><br/>
+						<blockquote>
+							<h1>
+								<i>Mudancas positivas no comportamento estao associadas a uma melhor perspectiva cognitiva</i>
+							</h1>
+							<br />
+							<cite>- Wright; Basco; Thase, 2008</cite>
+							<br />
+							<br />
+							<hr/>
+							<br/>
+						</blockquote>
 						<strong>
 							CRP: 06/150187
 						</strong>
 						<br/><br/>
 						<p>
-							<strong>Sou Beatriz Barrere, uma psicóloga comportamental</strong> com diversos pacientes satisfeitos.
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere, leo in eleifend vestibulum, justo l
-							igula placerat lacus, quis sollicitudin mi nunc id orci. Nullam eu lacinia nunc, in venenatis elit. Aenea
-							n at leo velit.
+							<strong>Sou Beatriz Barrére</strong> formada em Psicopedagogia e Psicologia e tenho me especializado em transtornos
+							de ansiedade e depressão, presto atendimento em psicoterapia individual nas modalidades presencial ou online, com crianças, adolescentes e adultos,
+							utilizando a Terapia Cognitivo-Comportamental (TCC).
+
+							<br/>
+							Sou proprietária da empresa Beatriz Barrére Psicologia
 						</p>
 					</Text>
 					<Button>
@@ -65,7 +76,7 @@ const Header: React.FC = () => {
 					</ContactWrapper>
 				</LeftWrapper>
 				<RightWrapper>
-					<AvatarImage src={BeatrizBarrere} alt="undraw" width={300} height={300}/>
+					<AvatarImage src={BeatrizBarrere} alt="beatriz_psicologa" width={300} height={300}/>
 				</RightWrapper>
 			</Container>
 		</Section>

@@ -8,9 +8,9 @@ const Dashboard: React.FC = () => {
 		<>
             <h1>Dashboard</h1>
 
-            <Link to="/about">
+            {/* <Link to="/about">
                 About
-            </Link>
+            </Link> */}
         </>
 	)
 }
